@@ -1,0 +1,1 @@
+/*just it is the combination of code of  question no 07 + no 08*/

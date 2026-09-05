@@ -1,0 +1,1 @@
+/*same as q no 14 just reverse it */
