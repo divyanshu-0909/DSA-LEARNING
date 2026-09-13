@@ -1,6 +1,6 @@
 // let us take one example that i have to find out certain numbers  in the array that how many times it is appearing using hashing 
    // introduction , initial problem , first apporach to search elements , what is hashing , precomputation.
-   // in  this topic only 2 questions of hasinh has been covered already 
+   // in  this topic only 2 questions of hashing has been covered already 
 #include<iostream> 
 using namespace std;
 int main(){
