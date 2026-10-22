@@ -19,13 +19,16 @@ void leftrotate(int arr[],int n,int d)
 }
 int main(){
     int n;
+    cout<<"Enter the size of the array"<<endl;
     cin>>n;
     int arr[n];
+    cout<<"Enter the elements  in the array"<<endl;
     for(int i=0;i<n;i++)
     {
         cin>>arr[i];
     }
     int d;
+    cout<<"Enter number of places you want to left rotate the array"<<endl;
     cin>>d;
     leftrotate(arr,n,d);
     for(int i=0;i<n;i++)
