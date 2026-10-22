@@ -10,7 +10,6 @@ bool checksorted(int arr[],int n)
         }
     }
     return false;
-
 }
 int main()
 {
