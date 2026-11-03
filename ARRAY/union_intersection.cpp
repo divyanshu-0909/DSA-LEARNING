@@ -1,45 +1,108 @@
+//  Brute Force 
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// vector<int> sortedarray(vector<int> a, vector<int> b)
+// {
+//     int n1 = a.size();
+//     int n2 = b.size();
+
+//     set<int> st;
+
+//     for(int i = 0; i < n1; i++)
+//     {
+//         st.insert(a[i]);
+//     }
+
+//     for(int i = 0; i < n2; i++)
+//     {
+//         st.insert(b[i]);
+//     }
+
+//     vector<int> temp;
+
+//     for(auto it : st)
+//     {
+//         temp.push_back(it);
+//     }
+
+//     return temp;
+// }
+
+// int main()
+// {
+//     vector<int> a = {1, 2, 3, 4};
+//     vector<int> b = {2, 3, 5, 6};
+
+//     vector<int> ans = sortedarray(a, b);
+
+//     for(auto it : ans)
+//     {
+//         cout << it << " ";
+//     }
+
+//     return 0;
+// }
+
+//   OPTIMIZED Solution 
 
 #include<bits/stdc++.h>
 using namespace std;
-
-vector<int> sortedarray(vector<int> a, vector<int> b)
+vector<int> sortedarray(vector<int> a, vector<int> b )
 {
-    int n1 = a.size();
-    int n2 = b.size();
-
-    set<int> st;
-
-    for(int i = 0; i < n1; i++)
+    int n1=a.size();
+    int n2=b.size();
+    int i=0;
+    int j=0;
+    vector<int> unionArr;
+    while(i<n1 && j<n2)
     {
-        st.insert(a[i]);
-    }
+        if(a[i]<=b[j])
+        {
+            if(unionArr.size()==0 || unionArr.back() != a[i])
+            {
+                unionArr.push_back(a[i]);
+            }
+            i++;
+        }
+        else 
+        {
+            if(unionArr.size()==0 || unionArr.back() != b[j])
+            {
+                unionArr.push_back(b[j]);
+            }
+            j++;
 
-    for(int i = 0; i < n2; i++)
+        }
+    }
+    while(i<n1)
     {
-        st.insert(b[i]);
+         if(unionArr.size()==0 || unionArr.back() != a[i])
+            {
+                unionArr.push_back(a[i]);
+            }
+            i++;
     }
-
-    vector<int> temp;
-
-    for(auto it : st)
+    while(j<n2)
     {
-        temp.push_back(it);
+        if(unionArr.size()==0 || unionArr.back() != b[j])
+            {
+                unionArr.push_back(b[j]);
+            }
+            j++;
     }
-
-    return temp;
+    return unionArr;
 }
-
 int main()
 {
-    vector<int> a = {1, 2, 3, 4};
-    vector<int> b = {2, 3, 5, 6};
-
-    vector<int> ans = sortedarray(a, b);
-
-    for(auto it : ans)
+    vector<int> a={1,2,3,3,4,6};
+    vector<int> b={5,5,6,7,8,10};
+    vector<int> ans =sortedarray( a , b );
+    for(auto it: ans)
     {
-        cout << it << " ";
+    cout<<it<<" ";
     }
 
-    return 0;
 }
